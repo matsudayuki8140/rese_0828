@@ -1,0 +1,103 @@
+.content-inner {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 5%;
+    font-size: 15px;
+}
+
+/* shop detail -------------------------------------------------- */
+.content-shop {
+    width: 40%;
+}
+
+.shop-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.shop-return {
+    text-decoration: none;
+}
+
+.shop-return span {
+    display: block;
+    padding: 4px 8px;
+    background-color: #fff;
+    border-radius: 3px;
+    color: #000;
+    font-weight: bold;
+    box-shadow: 3px 3px 3px #808080;
+    margin-right: 10px;
+}
+
+.shop-name {
+    font-size: 25px;
+}
+
+.shop-image {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* reservation ---------------------------------------------------- */
+.content-rese {
+    width: 40%;
+}
+
+.rese-form {
+    background-color: #00d;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: 3px 3px 3px #808080;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.rese-top {
+    width: 100%;
+    padding: 15px;
+}
+
+.rese-title {
+    margin: 10px 0;
+}
+
+
+.rese-input__date {
+    margin: 5px 0;
+}
+
+.rese-input {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.rese-table {
+    background-color: #0080ff;
+    border-radius: 5px;
+    text-align: left;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.rese-table td,
+.rese-table th {
+    padding: 2px 10px;
+}
+
+.rese-button {
+    width: 100%;
+    border: none;
+    background-color: #000099;
+    color: #fff;
+    border-radius: 0 0 5px 5px;
+    padding: 10px 0;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.rese-button:hover {
+    background-color: #0080ff;
+}

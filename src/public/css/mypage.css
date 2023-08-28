@@ -1,0 +1,62 @@
+/* mypage ------------------------------------------------------- */
+.mypage-title {
+    text-align: center;
+    font-size: 30px;
+    margin: 20px auto 0;
+}
+
+.mypage-content {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 0 30px;
+}
+
+.mypage-content__title {
+    margin: 0;
+    padding: 20px 0;
+}
+
+.mypage-rese {
+    width: 45%;
+}
+
+.rese-card {
+    width: 70%;
+    background-color: #00d;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #808080;
+    color: #fff;
+    font-size: 12px;
+    padding: 20px;
+    margin: 10px auto;
+    text-align: left;
+}
+
+.rese-card__header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.rese-title {
+    padding: 0 10px;
+}
+
+.rese-delete {
+    margin: 0 0 0 auto;
+}
+
+.rese-table__header {
+    padding: 10px 15px 0 0;
+}
+
+.rese-table__data {
+    padding-top: 10px;
+}
+
+.mypage-favo {
+    width: 55%;
+}
