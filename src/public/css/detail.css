@@ -74,6 +74,11 @@
     margin: 5px 0;
 }
 
+.rese-input,
+.rese-input__date {
+    height: 1.5rem;
+}
+
 .rese-table {
     background-color: #0080ff;
     border-radius: 5px;

@@ -9,14 +9,14 @@
     @csrf
     <div class="search">
         <select name="area" id="area" class="search-select">
-            <option value="" selected>All area</option>
+            <option value="">All area</option>
             <option value="東京都">東京都</option>
             <option value="大阪府">大阪府</option>
             <option value="福岡県">福岡県</option>
         </select>
         <div class="search-deco"></div>
         <select name="genre" id="genre" class="search-select">
-            <option value="" selected>All genre</option>
+            <option value="">All genre</option>
             <option value="寿司">寿司</option>
             <option value="焼肉">焼肉</option>
             <option value="居酒屋">居酒屋</option>
@@ -44,11 +44,15 @@
             <div class="card-button">
                 <span class="card-detail"><a href="/detail/{{ $shop['id'] }}">詳しく見る</a></span>
                 @auth
-                @if(!$shop->isFavoritedBy(Auth::id()))
-                <img src="{{ asset('storage/icon/unfavorite.svg') }}" alt="お気に入り" class="card-favo favorite" data-shop-id="{{ $shop['id'] }}">
-                @else
-                <img src="{{ asset('storage/icon/favorite.svg') }}" alt="お気に入り解除" class="card-favo favorite favorited" data-shop-id="{{ $shop['id'] }}">
-                @endif
+                <form action="/favorite" method="post">
+                @csrf
+                    <input type="hidden" name="shop_id" value="{{ $shop['id'] }}">
+                    @if(!$shop->isFavoritedBy(Auth::id()))
+                    <input type="image" src="{{ asset('storage/icon/unfavorite.svg') }}" alt="お気に入り" class="card-favo favorite">
+                    @else
+                    <input type="image" src="{{ asset('storage/icon/favorite.svg') }}" alt="お気に入り解除" class="card-favo favorite favorited">
+                    @endif
+                </form>
                 @endauth
             </div>
         </div>

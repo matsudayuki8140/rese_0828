@@ -9,10 +9,8 @@
     <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @yield('css')
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/menu.js') }}" defer></script>
-    <script src="{{ asset('js/favorite.js') }}"></script>
 
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -20,7 +20,15 @@ use App\Http\Controllers\ReservationController;
 Route::get('/', [ShopController::class, 'index']);
 Route::get('/detail/{shop_id}', [ShopController::class, 'detail']);
 Route::get('/search', [ShopController::class, 'search']);
-Route::post('/favorite', [Favorite::class, 'favorite']);
+Route::post('/favorite', [FavoriteController::class, 'favorite']);
+Route::post('/reservation', [ReservationController::class, 'store']);
+
+Route::middleware('auth')->group(function () {
+    Route::get('/mypage', [AuthenticatedSessionController::class, 'mypage']);
+    Route::get('/rating', function () {
+        return view('rating');
+    });
+});
 
 
 Route::get('/dashboard', function () {

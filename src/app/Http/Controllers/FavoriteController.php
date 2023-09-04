@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Favorite;
 
 class FavoriteController extends Controller
@@ -11,7 +12,7 @@ class FavoriteController extends Controller
         $userId = Auth::id();
         $shopId = $request->shop_id;
         $already = Favorite::where('user_id', $userId)
-        ->where('shop_id' $shopId)
+        ->where('shop_id', $shopId)
         ->first();
 
         if(!$already) {
@@ -22,10 +23,10 @@ class FavoriteController extends Controller
             Favorite::create($favorite);
         } else {
             Favorite::where('user_id', $userId)
-            ->where('shop_id' $shopId)
+            ->where('shop_id', $shopId)
             ->delete();
         }
 
-        return response()->json(['success' => true]);
+        return redirect()->back();
     }
 }
