@@ -24,7 +24,7 @@
             <option value="ラーメン">ラーメン</option>
         </select>
         <div class="search-deco"></div>
-        <input type="image" src="{{ asset('storage/icon/search.svg') }}" alt="検索" class="search-icon" width=20 height=20>
+        <input type="image" src="{{ asset('storage/icon/search.svg') }}" alt="検索" class="search-icon" width=20 height=20 title="検索">
         <input type="search" name="name" class="search-keyword" value="{{ old('name') }}" placeholder="Search ...">
     </div>
 </form>

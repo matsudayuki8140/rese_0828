@@ -12,6 +12,18 @@ class Shop extends Model
 
     protected $fillable = ['name','area','genre','description','imageURL'];
 
+    public function reservations() {
+        return $this->hasMany(Reservation::class, 'shop_id', 'id');
+    }
+
+    public function favorites() {
+        return $this->hasMany(Favorite::class, 'shop_id', 'id');
+    }
+
+    public function representatives() {
+        return $this->hasOne(Reservation::class, 'shop_id', 'id');
+    }
+
     public function scopeAreaSearch($query, $area) {
         if(!empty($area)) {
             $query->where('area', $area);

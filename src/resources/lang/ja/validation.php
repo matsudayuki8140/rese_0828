@@ -33,15 +33,15 @@ return [
     'boolean'              => ':attributeは、trueかfalseを指定してください。',
     'confirmed'            => ':attributeと、確認フィールドとが、一致していません。',
     'current_password'     => 'パスワードが正しくありません。',
-    'date'                 => ':attributeには有効な日付を指定してください。',
+    'date'                 => ':attributeには有効な日付を入力してください。',
     'date_equals'          => ':attributeには、:dateと同じ日付けを指定してください。',
-    'date_format'          => ':attributeは:format形式で指定してください。',
+    'date_format'          => ':attributeは:format形式で入力してください。',
     'different'            => ':attributeと:otherには、異なった内容を指定してください。',
     'digits'               => ':attributeは:digits桁で指定してください。',
     'digits_between'       => ':attributeは:min桁から:max桁の間で指定してください。',
     'dimensions'           => ':attributeの図形サイズが正しくありません。',
     'distinct'             => ':attributeには異なった値を指定してください。',
-    'email'                => ':attributeには、有効なメールアドレスを指定してください。',
+    'email'                => '有効なメールアドレスを入力してください。',
     'ends_with'            => ':attributeには、:valuesのどれかで終わる値を指定してください。',
     'exists'               => '選択された:attributeは正しくありません。',
     'file'                 => ':attributeにはファイルを指定してください。',
@@ -61,7 +61,7 @@ return [
     'image'                => ':attributeには画像ファイルを指定してください。',
     'in'                   => '選択された:attributeは正しくありません。',
     'in_array'             => ':attributeには:otherの値を指定してください。',
-    'integer'              => ':attributeは整数で指定してください。',
+    'integer'              => ':attributeは整数で入力してください。',
     'ip'                   => ':attributeには、有効なIPアドレスを指定してください。',
     'ipv4'                 => ':attributeには、有効なIPv4アドレスを指定してください。',
     'ipv6'                 => ':attributeには、有効なIPv6アドレスを指定してください。',
@@ -79,17 +79,17 @@ return [
         'array'   => ':attributeには、:value個以下のアイテムを指定してください。',
     ],
     'max'                  => [
-        'numeric' => ':attributeには、:max以下の数字を指定してください。',
+        'numeric' => ':attributeを:max以下で入力してください。',
         'file'    => ':attributeには、:max kB以下のファイルを指定してください。',
-        'string'  => ':attributeは、:max文字以下で指定してください。',
+        'string'  => ':attributeを:max文字以下で入力してください。',
         'array'   => ':attributeは:max個以下指定してください。',
     ],
     'mimes'                => ':attributeには:valuesタイプのファイルを指定してください。',
     'mimetypes'            => ':attributeには:valuesタイプのファイルを指定してください。',
     'min'                  => [
-        'numeric' => ':attributeには、:min以上の数字を指定してください。',
+        'numeric' => ':attributeを:min以上で入力してください。',
         'file'    => ':attributeには、:min kB以上のファイルを指定してください。',
-        'string'  => ':attributeは、:min文字以上で指定してください。',
+        'string'  => ':attributeを:min文字以上で入力してください。',
         'array'   => ':attributeは:min個以上指定してください。',
     ],
     'multiple_of' => ':attributeには、:valueの倍数を指定してください。',
@@ -99,7 +99,7 @@ return [
     'password'             => '正しいパスワードを指定してください。',
     'present'              => ':attributeが存在していません。',
     'regex'                => ':attributeに正しい形式を指定してください。',
-    'required'             => ':attributeは必ず指定してください。',
+    'required'             => ':attributeを入力してください。',
     'required_if'          => ':otherが:valueの場合、:attributeも指定してください。',
     'required_unless'      => ':otherが:valuesでない場合、:attributeを指定してください。',
     'required_with'        => ':valuesを指定する場合は、:attributeも指定してください。',
@@ -118,9 +118,9 @@ return [
         'array'   => ':attributeは:size個指定してください。',
     ],
     'starts_with'          => ':attributeには、:valuesのどれかで始まる値を指定してください。',
-    'string'               => ':attributeは文字列を指定してください。',
+    'string'               => ':attributeは文字列で入力してください。',
     'timezone'             => ':attributeには、有効なゾーンを指定してください。',
-    'unique'               => ':attributeの値は既に存在しています。',
+    'unique'               => 'この:attributeはすでに使用されています。',
     'uploaded'             => ':attributeのアップロードに失敗しました。',
     'url'                  => ':attributeに正しい形式を指定してください。',
     'uuid'                 => ':attributeに有効なUUIDを指定してください。',
@@ -137,8 +137,11 @@ return [
     */
 
     'custom' => [
-        '属性名' => [
-            'ルール名' => 'カスタムメッセージ',
+        'date' => [
+            'after' => '明日以降の日付を選択してください。',
+        ],
+        'rating' => [
+            'required' => '評価を選択してください。'
         ],
     ],
 
@@ -153,6 +156,14 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => '名前',
+        'email' => 'メールアドレス',
+        'password' => 'パスワード',
+        'date' => '日付',
+        'time' => '時間',
+        'number' => '人数',
+        'rating' => '評価',
+    ],
 
 ];

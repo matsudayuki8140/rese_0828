@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\RegisterRequest;
@@ -8,19 +10,12 @@ use App\Models\User;
 use App\Models\Role;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-class RegisteredUserController extends Controller
+class AdminController extends Controller
 {
-    /**
-     * Display the registration view.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function create()
-    {
-        return view('auth.register');
+    public function index() {
+        return view('admin.index');
     }
 
     /**
@@ -29,6 +24,7 @@ class RegisteredUserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      *
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function store(RegisterRequest $request)
     {
@@ -39,14 +35,12 @@ class RegisteredUserController extends Controller
         ]);
         $role = [
             'user_id' => $user->id,
-            'role' => 1,
+            'role' => 2,
         ];
         Role::create($role);
 
         event(new Registered($user));
 
-        Auth::login($user);
-
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/admin')->with('message', '店舗代表者用アカウントを作成しました');
     }
 }

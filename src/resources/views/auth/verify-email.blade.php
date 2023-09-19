@@ -8,7 +8,9 @@
 <div class="thanks-card">
     <p class="thanks-text">
         認証用メールを送信しました<br>
-        届いたメールに記載されたリンクをクリックして、会員登録を完了してください。<br>
+        届いたメールに記載されたリンクをクリックして、会員登録を完了してください。
+    </p>
+    <p class="thanks-text">
         ※メールが届かない場合は、入力したアドレスに間違いがあるか、あるいは迷惑メールフォルダに入っている可能性がありますのでご確認ください。
     </p>
     <form action="{{ route('verification.send') }}" method="post">

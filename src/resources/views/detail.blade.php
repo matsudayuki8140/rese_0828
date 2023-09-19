@@ -25,6 +25,7 @@
         <form action="/reservation" method="post" id="rese">
             @csrf
             <div class="rese-form">
+                @if(Auth::check())
                 <div class="rese-top">
                     <h2 class="rese-title">予約</h2>
                     <input type="date" name="date" class="rese-input__date">
@@ -39,7 +40,7 @@
                     </select>
                     <select name="number" class="rese-input">
                         @for($num = 1; $num <= 10; $num++)
-                        <option value="{{ $num }}" label="{{ $num }}人">{{ $num }}人</option>
+                        <option value="{{ $num }}">{{ $num }}人</option>
                         @endfor
                     </select>
                     <input type="hidden" name="shop_id" value="{{ $shop['id'] }}">
@@ -51,23 +52,43 @@
                             </tr>
                             <tr>
                                 <th class="rese-table__header">Date</th>
-                                <td id="date_box" class="rese-table__data"></td>
+                                <td id="date_box" class="rese-table__data">
+                                    @error('date')
+                                    <p class="error">{{ $message }}</p>
+                                    @enderror
+                                </td>
                             </tr>
                             <tr>
                                 <th class="rese-table__header">Time</th>
-                                <td id="time_box" class="rese-table__data"></td>
+                                <td id="time_box" class="rese-table__data">
+                                    12:00
+                                    @error('time')
+                                    <p class="error">{{ $message }}</p>
+                                    @enderror
+                                </td>
                             </tr>
                             <tr>
                                 <th class="rese-table__header">Number</th>
                                 <td class="rese-table__data">
-                                    <span id="number_box"></span>
+                                    <span id="number_box">1</span>
                                     <span>人</span>
+                                    @error('number')
+                                    <p class="error">{{ $message }}</p>
+                                    @enderror
                                 </td>
                             </tr>
                         </table>
                     </div>
                 </div>
                 <button class="rese-button">予約する</button>
+                @else
+                <div class="rese-top">
+                    <h2 class="rese-title">予約</h2>
+                    <div class="rese-message">
+                        予約フォームを利用するには、メニューからログインしてください。
+                    </div>
+                </div>
+                @endif
             </div>
         </form>
     </div>

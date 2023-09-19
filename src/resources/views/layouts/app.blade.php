@@ -40,6 +40,12 @@
                     </form>
                 </li>
                 <li><a href="/mypage">Mypage</a></li>
+                @can('representative')
+                <li><a href="/shop/index">Shop</a></li>
+                @endcan
+                @can('admin')
+                <li><a href="/admin">Admin</a></li>
+                @endcan
                 @else
                 <li><a href="{{ route('register') }}">Registration</a></li>
                 <li><a href="{{ route('login') }}">Login</a></li>
@@ -47,6 +53,23 @@
             </ul>
         </nav>
     <main class="main">
+        <div class="alert">
+            @if(session('message'))
+            <div class="alert-success">
+                {{ session('message') }}
+            </div>
+            @endif
+            @if($errors->any())
+            <div class="alert-error">
+                <p class="error-text">エラーが発生しました</p>
+                <ul>
+                    @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+        </div>
         @yield('main')
     </main>
 </body>

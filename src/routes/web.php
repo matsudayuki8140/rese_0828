@@ -5,6 +5,9 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\RatingController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\RepresentativeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,19 +23,31 @@ use App\Http\Controllers\ReservationController;
 Route::get('/', [ShopController::class, 'index']);
 Route::get('/detail/{shop_id}', [ShopController::class, 'detail']);
 Route::get('/search', [ShopController::class, 'search']);
-Route::post('/favorite', [FavoriteController::class, 'favorite']);
-Route::post('/reservation', [ReservationController::class, 'store']);
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth', 'verified')->group(function () {
+    Route::post('/favorite', [FavoriteController::class, 'favorite']);
+    Route::post('/reservation', [ReservationController::class, 'store']);
+    Route::patch('/reservation/update', [ReservationController::class, 'update']);
+    Route::delete('/reservation/delete', [ReservationController::class, 'destroy']);
     Route::get('/mypage', [AuthenticatedSessionController::class, 'mypage']);
-    Route::get('/rating', function () {
-        return view('rating');
+    Route::get('/rating/{shop_id}', [RatingController::class, 'create']);
+    Route::post('/rating', [RatingController::class, 'store']);
+});
+
+Route::middleware('auth', 'verified', 'can:admin')->group(function () {
+    Route::get('/admin', [AdminController::class, 'index']);
+    Route::post('/admin/register', [AdminController::class, 'store']);
+});
+
+Route::middleware('auth', 'verified', 'can:representative')->group(function () {
+    Route::prefix('shop')->group(function() {
+        Route::get('index', [RepresentativeController::class, 'index']);
+        Route::get('', [RepresentativeController::class, 'create']);
+        Route::post('/store', [RepresentativeController::class, 'store']);
+        Route::post('/update', [RepresentativeController::class, 'update']);
     });
 });
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

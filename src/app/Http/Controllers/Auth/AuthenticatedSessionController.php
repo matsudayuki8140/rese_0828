@@ -10,6 +10,7 @@ use App\Models\Reservation;
 use App\Models\Favorite;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -56,13 +57,16 @@ class AuthenticatedSessionController extends Controller
     }
 
     public function mypage() {
-        $user = Auth::user();
-        $reservations = Reservation::where('user_id', $user['id'])
+        $userId = Auth::id();
+        $yesterday = Carbon::yesterday();
+        $reservations = Reservation::where('user_id', $userId)
+        ->where('date', '>', $yesterday)
         ->with('shop')
         ->get();
-        $favorites = Favorite::where('user_id', $user['id'])
+        $favorites = Favorite::where('user_id', $userId)
         ->with('shop')
         ->get();
-        return view('mypage', compact('user', 'reservations', 'favorites'));
+
+        return view('mypage', compact('reservations', 'favorites'));
     }
 }

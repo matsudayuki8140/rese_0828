@@ -1,16 +1,15 @@
 /* thanks card ---------------------------------------------- */
 .thanks-card {
-    width: 350px;
+    max-width: 40%;
     background-color: #fff;
     box-shadow: 3px 3px 3px #808080;
-    padding: 40px 20px 60px;
+    padding: 40px 20px;
     text-align: center;
     margin: 20px auto;
 }
 
 .thanks-text {
-    font-size: 20px;
-    padding-bottom: 20px;
+    font-size: 18px;
 }
 
 .thanks-card a {
@@ -22,10 +21,45 @@
     font-size: 15px;
     color: #fff;
     background-color: #00d;
+    border: none;
     border-radius: 3px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .thanks-button:hover {
     background-color: #00f;
+}
+
+/* rating ------------------------------------- */
+.rating-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.rating-container .thanks-card {
+    margin: 10px 30px;
+}
+
+.rating-star {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+}
+
+.rating-star input[type=radio] {
+    display: none;
+}
+
+.rating-star label {
+    position: relative;
+    padding: 0 5px;
+    color: #ccc;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+.rating-star input[type=radio]:checked ~ label {
+    color: #fc0;
 }
