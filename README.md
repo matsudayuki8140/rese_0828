@@ -503,4 +503,20 @@ ratings table
 ![rese drawio](https://github.com/matsudayuki8140/rese_0828/assets/129087994/f9864802-9ce9-4f0a-8cfe-a204f3ce72e4)
 
 ## 環境構築
-## テストアカウント
+docker-composeを利用しました。以下の手順でセットアップが出来るはずです。<br>
+１．作業ディレクトリにこのリポジトリをクローンする<br>
+２．Dockerコンテナを起動する（$ docker-compose up -d --build）<br>
+３．PHPコンテナ内にログインして（$ docker-compose exec php bash）コンポーザーをインストール（$ composer install）、npmをインストール・ビルド（$ npm install && npm run dev）<br>
+４．.env.exampleファイルを.envにコピーして編集する<br>
+    DB_CONNECTION=mysql<br>
+    DB_HOST=mysql<br>
+    DB_PORT=3306<br>
+    DB_DATABASE=laravel_db<br>
+    DB_USERNAME=laravel_user<br>
+    DB_PASSWORD=laravel_pass<br>
+<br>
+    MAIL_MAILER=smtp<br>
+    MAIL_HOST=mailhog<br>
+    MAIL_PORT=1025<br>
+    MAIL_FROM_ADDRESS=info@example.com（任意のメールアドレス）　<br>
+### ダミーデータ
