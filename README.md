@@ -1,5 +1,7 @@
 # Rese
 飲食店の予約サービスアプリです。
+<img width="1437" alt="shop_all" src="https://github.com/matsudayuki8140/rese_0828/assets/129087994/32292ce6-7b54-48a2-972a-a0f4c54817a9">
+
 ## 作成した目的
 外部の飲食店予約サービスは手数料を取られるので自社で予約サービスを持つため。
 ## アプリケーションURL
@@ -9,11 +11,20 @@
 登録されているすべての飲食店を一覧表示します。
 #### 飲食店検索
 検索フォームから地域、ジャンル、店名で検索することができます。
+<img width="1437" alt="shop_all" src="https://github.com/matsudayuki8140/rese_0828/assets/129087994/d2dcef47-9207-48ff-a248-20e50d143f53"> 
+
 #### 飲食店詳細表示
 店舗の詳細情報と予約フォームを表示します。予約フォームはログインすると使用できます。
+<img width="1437" alt="shop_detail" src="https://github.com/matsudayuki8140/rese_0828/assets/129087994/4f4992d2-c6b9-496e-995a-17cfbef29fca">
+
 #### 会員登録、メール認証
 会員登録後、入力したメールアドレスに認証メールが送信されます。メールに記載されたリンクにアクセスすることで会員登録を完了します。
+<img width="1437" alt="register" src="https://github.com/matsudayuki8140/rese_0828/assets/129087994/69b70bf4-6b83-4899-9bf4-964278c4bfbb">
+
 #### ログイン、ログアウト
+<img width="1393" alt="menu2" src="https://github.com/matsudayuki8140/rese_0828/assets/129087994/7c61db4a-9988-4c41-b566-4da01c0229de">
+<img width="1392" alt="menu1" src="https://github.com/matsudayuki8140/rese_0828/assets/129087994/a102eade-c2bf-4830-b9a8-16e456ad8af4">
+
 #### 飲食店お気に入り追加、削除
 ログインすると機能を使用できます。店舗一覧のハートマークをクリックすることで、店舗をお気に入りに登録したり削除したりすることができます。
 #### 飲食店予約情報追加、変更、削除
@@ -22,6 +33,8 @@
 店舗詳細ページの「評価する」ボタンからアクセスできます。評価は★１～５の五段階評価と、コメントを入力することができます。
 #### マイページ表示
 ユーザーの予約情報と、お気に入り登録した店舗を一覧表示します。予約情報については、前日以前の予約情報は表示されません。
+<img width="1437" alt="my_page" src="https://github.com/matsudayuki8140/rese_0828/assets/129087994/debf72a7-af8c-4a0d-ba92-9180908f08ca">
+
 #### 予約リマインダー機能
 飲食店の予約情報が登録されていると、予約当日の朝８時ころにメールが送信されます。
 ### 管理者
