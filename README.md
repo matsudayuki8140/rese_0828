@@ -520,3 +520,18 @@ docker-composeを利用しました。以下の手順でセットアップが出
     MAIL_PORT=1025<br>
     MAIL_FROM_ADDRESS=info@example.com（任意のメールアドレス）　<br>
 ### ダミーデータ
+シーディングを実行すると、２５件のユーザーと各ロールのデータ、２０件の店舗データが追加されるように設定されています。<br>
+#### テストアカウント
+パスワードはすべて「pass0918」です。<br>
+管理者<br>
+name:テスト太郎<br>
+email:tarou@example.com<br>
+<br>
+店舗代表者<br>
+name:テスト次郎<br>
+email:jirou@example.com<br>
+<br>
+一般ユーザー<br>
+name:テスト三郎<br>
+email:saburou@example.com<br>
+<br>
