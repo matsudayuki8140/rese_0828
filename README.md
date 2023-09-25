@@ -520,6 +520,9 @@ docker-composeを利用しました。以下の手順でセットアップが出
     MAIL_HOST=mailhog<br>
     MAIL_PORT=1025<br>
     MAIL_FROM_ADDRESS=info@example.com（任意のメールアドレス）　<br>
+・アイコンは以下のサイトのフリーアイコンを使用しました。<br>
+https://icooon-mono.com/
+
 ### ダミーデータ
 シーディングを実行すると、２５件のユーザーと各ロールのデータ、２０件の店舗データが追加されるように設定されています。<br>
 #### テストアカウント
