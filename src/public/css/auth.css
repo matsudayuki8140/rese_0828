@@ -1,0 +1,58 @@
+/* Auth input form ---------------------------------------------- */
+.auth-card {
+    width: 300px;
+    margin: 50px auto;
+    box-shadow: 3px 3px 3px #808080;
+    border-radius: 5px;
+}
+
+.auth-card__top {
+    margin: 0;
+    background-color: #00d;
+    color: #fff;
+    font-size: 15px;
+    padding: 10px 15px;
+    border-radius: 5px 5px 0 0;
+}
+
+.auth-card__title {
+    margin: 0;
+}
+
+.auth-card__bottom {
+    margin: 0;
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+    padding: 10px;
+}
+
+.auth-card__row {
+    margin-bottom: 5px;
+}
+
+.auth-card__input {
+    border: none;
+    border-bottom: solid 1.5px #808080;
+    width: 240px;
+    margin-left: 5px;
+}
+
+.auth-card__button-container {
+    width: 100%;
+    text-align: end;
+    padding-top: 5px;
+}
+
+.auth-card__button {
+    border: none;
+    border-radius: 3px;
+    background-color: #00d;
+    color: #fff;
+    padding: 3px 10px;
+    margin: 10px 10px 5px auto;
+    cursor: pointer;
+}
+
+.auth-card__button:hover {
+    background-color: #0080ff;
+}

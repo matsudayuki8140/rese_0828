@@ -1,0 +1,198 @@
+/* mypage ------------------------------------------------------- */
+.mypage-title {
+    text-align: center;
+    font-size: 30px;
+}
+
+.page-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    text-decoration: none;
+    color: #000099;
+    background-color: #fff;
+    border: solid 1px #000099;
+    border-radius: 3px;
+    padding: 0 10px;
+    font-size: 25px;
+    margin: 0 20px;
+}
+
+.mypage-content {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 0 30px;
+}
+
+.mypage-content__title {
+    margin: 0;
+    padding: 20px;
+}
+
+.mypage-rese {
+    width: 45%;
+}
+
+.rese-card {
+    width: 70%;
+    min-width: 300px;
+    background-color: #00d;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #808080;
+    color: #fff;
+    padding: 20px;
+    margin: 10px auto;
+    text-align: left;
+}
+
+.rese-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.rese-header__left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.rese-header__right {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.rese-title {
+    padding: 0 10px;
+}
+
+.rese-header__delete {
+    margin: 2px 5px 0;
+}
+
+.rese-header__update {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.rese-table__header {
+    padding: 10px 15px 0 0;
+}
+
+.rese-table__data {
+    padding-top: 10px;
+}
+
+/* rese-card update --------------------------------------------- */
+.rese-update {
+    display: block;
+    margin-top: 10px;
+    border: none;
+    border-radius: 3px;
+    height: 1.5rem;
+}
+
+.rese-update__select {
+    width: 100%;
+}
+
+.rese-update__button {
+    display: block;
+    border: solid 1px #fff;
+    border-radius: 3px;
+    background-color: #000099;
+    color: #fff;
+    font-weight: bold;
+    width: 50px;
+    margin: 5px 0 0 auto;
+}
+
+.rese-update__button:hover {
+    background-color: #0080ff;
+    cursor: pointer;
+}
+
+.invalid {
+    display: none;
+}
+
+/* favorite ----------------------------------------------------- */
+.mypage-favo {
+    width: 55%;
+}
+
+/* shop page ---------------------------------------------------- */
+.menu-button {
+    width: 80%;
+    max-width: 500px;
+    height: 200px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 10px;
+}
+
+.menu-button__label {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #00d;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #808080;
+}
+
+.menu-button__label p,
+.invalid-button p {
+    margin: 0;
+}
+
+.menu-button__label:hover {
+    background-color: #0080ff;
+}
+
+.invalid-button {
+    width: 80%;
+    max-width: 500px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #808080;
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 10px;
+    background-color: #191970;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .mypage-content {
+        flex-direction: column;
+    }
+
+    .mypage-rese {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .mypage-favo {
+        width: 100%;
+        margin: 50px auto;
+    }
+
+    .menu-button {
+        margin: 20px auto;
+    }
+}

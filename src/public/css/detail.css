@@ -1,0 +1,164 @@
+.content-inner {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 5%;
+    font-size: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .content-inner {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .content-shop {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .content-rese {
+        width: 100%;
+        padding-top: 60px;
+        margin: 0 auto;
+    }
+}
+
+/* shop detail -------------------------------------------------- */
+.content-shop {
+    width: 40%;
+}
+
+.shop-title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.shop-return {
+    text-decoration: none;
+}
+
+.shop-return span {
+    display: block;
+    padding: 4px 8px;
+    background-color: #fff;
+    border-radius: 3px;
+    color: #000;
+    font-weight: bold;
+    box-shadow: 3px 3px 3px #808080;
+    margin-right: 10px;
+}
+
+.shop-name {
+    font-size: 25px;
+}
+
+.shop-image {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.shop-text {
+    padding-bottom: 20px;
+}
+
+.rating-button {
+    text-decoration: none;
+    background-color: #00d;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.rating-button:hover {
+    background-color: #0080ff;
+}
+
+/* reservation ---------------------------------------------------- */
+.content-rese {
+    width: 40%;
+}
+
+.rese-form {
+    background-color: #00d;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: 3px 3px 3px #808080;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.rese-top {
+    width: 100%;
+    padding: 15px;
+}
+
+.rese-title {
+    margin: 10px 0;
+}
+
+
+.rese-input__date {
+    margin: 5px 0;
+}
+
+.rese-input {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.rese-input,
+.rese-input__date {
+    height: 1.5rem;
+    border: none;
+    border-radius: 3px;
+}
+
+.rese-table {
+    background-color: #0080ff;
+    border-radius: 5px;
+    text-align: left;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.rese-table td,
+.rese-table th {
+    padding: 2px 10px;
+}
+
+.rese-button {
+    width: 100%;
+    border: none;
+    background-color: #000099;
+    color: #fff;
+    border-radius: 0 0 5px 5px;
+    padding: 10px 0;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+.rese-button:hover {
+    background-color: #0080ff;
+}
+
+.rese-message {
+    background-color: #0080ff;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 20px;
+}
+
+/* error ------------------------------------ */
+.error {
+    color: #ff4500;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* Shop data form ----------------------------- */
+.page-title {
+    margin: 0 auto;
+}
