@@ -498,6 +498,7 @@ ratings table
         <td></td>
     </tr>
 </table>
+
 ## ER図
 ![rese drawio](https://github.com/matsudayuki8140/rese_0828/assets/129087994/f9864802-9ce9-4f0a-8cfe-a204f3ce72e4)
 
