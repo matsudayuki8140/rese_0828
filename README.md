@@ -21,6 +21,8 @@
 <img width="1437" alt="register" src="https://github.com/matsudayuki8140/rese_0828/assets/129087994/69b70bf4-6b83-4899-9bf4-964278c4bfbb">
 
 #### ログイン、ログアウト
+ログインには会員登録が必要です。入力する情報は名前、メールアドレス、パスワードの３つです。<br>
+会員登録を完了するにはメールアドレスの認証が必要です。登録したメールアドレスに認証メールが送信されるので、記載されたリンクをクリックすることで会員登録を完了することができます。<br>
 <img width="1393" alt="menu2" src="https://github.com/matsudayuki8140/rese_0828/assets/129087994/7c61db4a-9988-4c41-b566-4da01c0229de">
 <img width="1392" alt="menu1" src="https://github.com/matsudayuki8140/rese_0828/assets/129087994/a102eade-c2bf-4830-b9a8-16e456ad8af4">
 
@@ -51,9 +53,6 @@
 #### お知らせメール作成
 メールの見出しと本文を入力して送信ボタンを押すことで、アプリのユーザー全員にお知らせメールを送信します。
 ## 実行環境
-## テーブル設計
-## ER図
-## 環境構築
 HTML5<br>
 CSS3<br>
 PHP 7.4.9<br>
@@ -61,4 +60,446 @@ Laravel Framework 8.83.27　<br>
 Laravel breeze<br>
 mysql 15.1<br>
 Mailhog<br>
+## テーブル設計
+users table
+<table>
+    <tr>
+        <th>カラム名</th>
+        <th>型</th>
+        <th>PRIMARY KEY</th>
+        <th>UNIQUE KEY</th>
+        <th>NOT NULL</th>
+        <th>FOREIGN KEY</th>
+    </tr>
+    <tr>
+        <td>id</td>
+        <td>unsigned bigint</td>
+        <td>〇</td>
+        <td></td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>name</td>
+        <td>string</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>email</td>
+        <td>string</td>
+        <td></td>
+        <td>〇</td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>email_verified_at</td>
+        <td>timestamp</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>password</td>
+        <td>string</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>created_at</td>
+        <td>timestamp</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>updated_at</td>
+        <td>timestamp</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+roles table
+<table>
+    <tr>
+        <th>カラム名</th>
+        <th>型</th>
+        <th>PRIMARY KEY</th>
+        <th>UNIQUE KEY</th>
+        <th>NOT NULL</th>
+        <th>FOREIGN KEY</th>
+    </tr>
+    <tr>
+        <td>id</td>
+        <td>unsigned bigint</td>
+        <td>〇</td>
+        <td></td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>user_id</td>
+        <td>unsigned bigint</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td>users(id)</td>
+    </tr>
+    <tr>
+        <td>role</td>
+        <td>integer</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>created_at</td>
+        <td>timestamp</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>updated_at</td>
+        <td>timestamp</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+shops table
+<table>
+    <tr>
+        <th>カラム名</th>
+        <th>型</th>
+        <th>PRIMARY KEY</th>
+        <th>UNIQUE KEY</th>
+        <th>NOT NULL</th>
+        <th>FOREIGN KEY</th>
+    </tr>
+    <tr>
+        <td>id</td>
+        <td>unsigned bigint</td>
+        <td>〇</td>
+        <td></td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>name</td>
+        <td>string</td>
+        <td></td>
+        <td>〇</td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>area</td>
+        <td>string</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>genre</td>
+        <td>string</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>description</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>imageURL</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>created_at</td>
+        <td>timestamp</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>updated_at</td>
+        <td>timestamp</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+representatives table
+<table>
+    <tr>
+        <th>カラム名</th>
+        <th>型</th>
+        <th>PRIMARY KEY</th>
+        <th>UNIQUE KEY</th>
+        <th>NOT NULL</th>
+        <th>FOREIGN KEY</th>
+    </tr>
+    <tr>
+        <td>id</td>
+        <td>unsigned bigint</td>
+        <td>〇</td>
+        <td></td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>user_id</td>
+        <td>unsigned bigint</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td>users(id)</td>
+    </tr>
+    <tr>
+        <td>shop_id</td>
+        <td>unsigned bigint</td>
+        <td></td>
+        <td>〇</td>
+        <td>〇</td>
+        <td>shops(id)</td>
+    </tr>
+    <tr>
+        <td>created_at</td>
+        <td>timestamp</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>updated_at</td>
+        <td>timestamp</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+reservations table
+<table>
+    <tr>
+        <th>カラム名</th>
+        <th>型</th>
+        <th>PRIMARY KEY</th>
+        <th>UNIQUE KEY</th>
+        <th>NOT NULL</th>
+        <th>FOREIGN KEY</th>
+    </tr>
+    <tr>
+        <td>id</td>
+        <td>unsigned bigint</td>
+        <td>〇</td>
+        <td></td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>user_id</td>
+        <td>unsigned bigint</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td>users(id)</td>
+    </tr>
+    <tr>
+        <td>shop_id</td>
+        <td>unsigned bigint</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td>shops(id)</td>
+    </tr>
+    <tr>
+        <td>date</td>
+        <td>date</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>time</td>
+        <td>time</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>number</td>
+        <td>integer</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>created_at</td>
+        <td>timestamp</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>updated_at</td>
+        <td>timestamp</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+favorites table
+<table>
+    <tr>
+        <th>カラム名</th>
+        <th>型</th>
+        <th>PRIMARY KEY</th>
+        <th>UNIQUE KEY</th>
+        <th>NOT NULL</th>
+        <th>FOREIGN KEY</th>
+    </tr>
+    <tr>
+        <td>id</td>
+        <td>unsigned bigint</td>
+        <td>〇</td>
+        <td></td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>user_id</td>
+        <td>unsigned bigint</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td>users(id)</td>
+    </tr>
+    <tr>
+        <td>shop_id</td>
+        <td>unsigned bigint</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td>shops(id)</td>
+    </tr>
+    <tr>
+        <td>created_at</td>
+        <td>timestamp</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>updated_at</td>
+        <td>timestamp</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+ratings table
+<table>
+    <tr>
+        <th>カラム名</th>
+        <th>型</th>
+        <th>PRIMARY KEY</th>
+        <th>UNIQUE KEY</th>
+        <th>NOT NULL</th>
+        <th>FOREIGN KEY</th>
+    </tr>
+    <tr>
+        <td>id</td>
+        <td>unsigned bigint</td>
+        <td>〇</td>
+        <td></td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>user_id</td>
+        <td>unsigned bigint</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td>users(id)</td>
+    </tr>
+    <tr>
+        <td>shop_id</td>
+        <td>unsigned bigint</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td>shops(id)</td>
+    </tr>
+    <tr>
+        <td>rating</td>
+        <td>integer</td>
+        <td></td>
+        <td></td>
+        <td>〇</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>comment</td>
+        <td>text</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>created_at</td>
+        <td>timestamp</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>updated_at</td>
+        <td>timestamp</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+## ER図
+![rese drawio](https://github.com/matsudayuki8140/rese_0828/assets/129087994/f9864802-9ce9-4f0a-8cfe-a204f3ce72e4)
+
+## 環境構築
 ## テストアカウント
