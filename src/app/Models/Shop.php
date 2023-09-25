@@ -21,7 +21,7 @@ class Shop extends Model
     }
 
     public function representatives() {
-        return $this->hasOne(Reservation::class, 'shop_id', 'id');
+        return $this->hasOne(Representative::class, 'shop_id', 'id');
     }
 
     public function scopeAreaSearch($query, $area) {

@@ -35,16 +35,22 @@ Route::middleware('auth', 'verified')->group(function () {
 });
 
 Route::middleware('auth', 'verified', 'can:admin')->group(function () {
-    Route::get('/admin', [AdminController::class, 'index']);
-    Route::post('/admin/register', [AdminController::class, 'store']);
+    Route::prefix('admin')->group(function() {
+        Route::get('', [AdminController::class, 'index']);
+        Route::post('/register', [AdminController::class, 'store']);
+    });
 });
 
 Route::middleware('auth', 'verified', 'can:representative')->group(function () {
     Route::prefix('shop')->group(function() {
         Route::get('index', [RepresentativeController::class, 'index']);
+        Route::get('rese', [RepresentativeController::class, 'rese']);
+        Route::get('rating', [RepresentativeController::class, 'rating']);
+        Route::get('mail', [RepresentativeController::class, 'mail']);
+        Route::post('sendMail', [RepresentativeController::class, 'sendMail']);
         Route::get('', [RepresentativeController::class, 'create']);
         Route::post('/store', [RepresentativeController::class, 'store']);
-        Route::post('/update', [RepresentativeController::class, 'update']);
+        Route::patch('/update', [RepresentativeController::class, 'update']);
     });
 });
 

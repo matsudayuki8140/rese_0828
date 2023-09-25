@@ -2,7 +2,23 @@
 .mypage-title {
     text-align: center;
     font-size: 30px;
-    margin: 0 auto;
+}
+
+.page-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    text-decoration: none;
+    color: #000099;
+    background-color: #fff;
+    border: solid 1px #000099;
+    border-radius: 3px;
+    padding: 0 10px;
+    font-size: 25px;
+    margin: 0 20px;
 }
 
 .mypage-content {
@@ -24,11 +40,11 @@
 
 .rese-card {
     width: 70%;
+    min-width: 300px;
     background-color: #00d;
     border-radius: 5px;
     box-shadow: 3px 3px 3px #808080;
     color: #fff;
-    font-size: 12px;
     padding: 20px;
     margin: 10px auto;
     text-align: left;

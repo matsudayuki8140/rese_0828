@@ -14,10 +14,10 @@
 <div class="mypage-content">
 
     @if($user->isHadShop(Auth::id()))
-    <a href="" class="menu-button">
+    <a href="/shop/rese/?num=0" class="menu-button">
         <div class="menu-button__label">
             <p>予約一覧</p>
-            <p>本日：{{ $representative->shop->name }}件</p>
+            <p>本日：{{ $reseCount }}件</p>
         </div>
     </a>
     @else
@@ -27,7 +27,7 @@
     @endif
 
     @if($user->isHadShop(Auth::id()))
-    <a href="" class="menu-button">
+    <a href="/shop/rating" class="menu-button">
         <div class="menu-button__label">
             <p>評価一覧</p>
         </div>
@@ -42,7 +42,7 @@
 <div class="mypage-content">
 
     @if($user->isHadShop(Auth::id()))
-    <a href="" class="menu-button">
+    <a href="/shop/mail" class="menu-button">
         <div class="menu-button__label">
             <p>お知らせメール</p>
         </div>
@@ -54,7 +54,7 @@
     @endif
 
     @if($user->isHadShop(Auth::id()))
-    <a href="" class="menu-button">
+    <a href="/shop/?id={{ $representative->shop_id }}" class="menu-button">
         <div class="menu-button__label">
             <p>店舗情報変更</p>
         </div>

@@ -84,7 +84,7 @@ return [
         'string'  => ':attributeを:max文字以下で入力してください。',
         'array'   => ':attributeは:max個以下指定してください。',
     ],
-    'mimes'                => ':attributeには:valuesタイプのファイルを指定してください。',
+    'mimes'                => ':attributeには:valuesのいずれかのファイルを指定してください。',
     'mimetypes'            => ':attributeには:valuesタイプのファイルを指定してください。',
     'min'                  => [
         'numeric' => ':attributeを:min以上で入力してください。',
@@ -164,6 +164,13 @@ return [
         'time' => '時間',
         'number' => '人数',
         'rating' => '評価',
+        'comment' => 'コメント',
+        'area' => '地域',
+        'genre' => 'ジャンル',
+        'description' => '説明',
+        'imageURL' => '画像',
+        'greet' => '見出し',
+        'message' => '本文',
     ],
 
 ];

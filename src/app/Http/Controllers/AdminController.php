@@ -40,6 +40,7 @@ class AdminController extends Controller
         Role::create($role);
 
         event(new Registered($user));
+        Auth::login($user);
 
         return redirect('/admin')->with('message', '店舗代表者用アカウントを作成しました');
     }

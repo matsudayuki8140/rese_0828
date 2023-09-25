@@ -46,7 +46,12 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(Role::class, 'user_id', 'id');
     }
 
+    public function representative() {
+        return $this->hasOne(Representative::class, 'user_id', 'id');
+    }
+
     public function isHadShop($userId): bool {
         return Representative::where('user_id', $userId)->first() !==null;
     }
+
 }
