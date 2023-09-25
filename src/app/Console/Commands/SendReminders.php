@@ -47,13 +47,14 @@ class SendReminders extends Command
         $reservations = Reservation::where('date', date("Y-m-d"))->get();
         $greet = 'ご予約当日です';
         $message = 'Reseにログインして、予約情報をご確認ください。ご来店お待ちしております。';
+        $url = "http://localhost/";
 
         foreach($reservations as $reservation) {
             $user = User::find($reservation->user_id);
             $email = $user->email;
             $shop = Shop::find($reservation->shop_id);
             $name = $shop->name;
-            Mail::send(new ShopMail($email,$greet,$message,$name));
+            Mail::send(new ShopMail($email,$greet,$message,$name,$url));
         }
     }
 }

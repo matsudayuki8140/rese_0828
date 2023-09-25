@@ -75,9 +75,10 @@ class RepresentativeController extends Controller
         $message = $request->message;
         $name = $request->name;
         $emails = User::select('email')->get();
+        $url = "http://localhost/";
 
         foreach($emails as $email) {
-            Mail::send(new ShopMail($email,$greet,$message,$name));
+            Mail::send(new ShopMail($email,$greet,$message,$name,$url));
         }
 
         return redirect('/shop/index')->with('message', 'メールを送信しました');

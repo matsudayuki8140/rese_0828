@@ -16,12 +16,13 @@ class ShopMail extends Mailable
      *
      * @return void
      */
-    public function __construct($email, $greet, $message, $name)
+    public function __construct($email, $greet, $message, $name, $url)
     {
         $this->email = $email;
         $this->greet = $greet;
         $this->message = $message;
         $this->name = $name;
+        $this->url = $url;
     }
 
     /**
@@ -39,6 +40,7 @@ class ShopMail extends Mailable
                 'greet' => $this->greet,
                 'text' => $this->message,
                 'name' => $this->name,
+                'url' => $this->url,
             ]);
     }
 }

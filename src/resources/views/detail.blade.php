@@ -20,6 +20,7 @@
         <p class="shop-text">
             {{ $shop['description'] }}
         </p>
+        <a href="/rating/{{ $shop['id'] }}" class="rating-button">評価する</a>
     </div>
     <div class="content-rese">
         <form action="/reservation" method="post" id="rese">

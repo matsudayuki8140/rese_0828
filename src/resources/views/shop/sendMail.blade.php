@@ -22,7 +22,7 @@
         <a href="http://localhost/" class="button">Reseを開く</a>
         <div class="text sub-text">
             <div class="line"></div>
-            <p>「Reseを開く」ボタンがクリックできない場合、こちらのURLをブラウザに貼り付けてください：<a href="http://localhost/" class="mail-link">http://localhost/</a></p>
+            <p>「Reseを開く」ボタンがクリックできない場合、こちらのURLをブラウザに貼り付けてください：<a href="{{ $url }}" class="mail-link">{{ $url }}</a></p>
         </div>
     </div>
     <small class="copy-right">© 2023 Rese. All rights reserved.</small>

@@ -5,6 +5,24 @@
     font-size: 15px;
 }
 
+@media screen and (max-width: 768px) {
+    .content-inner {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .content-shop {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .content-rese {
+        width: 100%;
+        padding-top: 60px;
+        margin: 0 auto;
+    }
+}
+
 /* shop detail -------------------------------------------------- */
 .content-shop {
     width: 40%;
@@ -38,6 +56,22 @@
 .shop-image {
     width: 100%;
     margin-bottom: 30px;
+}
+
+.shop-text {
+    padding-bottom: 20px;
+}
+
+.rating-button {
+    text-decoration: none;
+    background-color: #00d;
+    color: #fff;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.rating-button:hover {
+    background-color: #0080ff;
 }
 
 /* reservation ---------------------------------------------------- */

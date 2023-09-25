@@ -31,7 +31,7 @@
 
 .mypage-content__title {
     margin: 0;
-    padding: 20px 0;
+    padding: 20px;
 }
 
 .mypage-rese {
@@ -175,4 +175,24 @@
     margin: 20px 10px;
     background-color: #191970;
     border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    .mypage-content {
+        flex-direction: column;
+    }
+
+    .mypage-rese {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .mypage-favo {
+        width: 100%;
+        margin: 50px auto;
+    }
+
+    .menu-button {
+        margin: 20px auto;
+    }
 }
